@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Diego Ferreira de Freitas">
+
+    <title>Diego Ferreira</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/scrolling-nav.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Diego Ferreira</a>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-white">
+      <div class="container text-center">
+        <h1>Diego Ferreira de Freitas</h1>
+        <p class="lead">Estudante de Análise e Desenvolvimento de Sistema na Fatec de Mogi</p>
+        <h6><p>Parabens essa é a sua  {% if ck == 1 %}
+                                        primeira visita!
+                                      {% else %}
+                                        visita de numero: {{ck}}!
+                                      {% endif %} 
+            </p>
+            <p>Click <a href="http://127.0.0.1:5000/sobre">aqui</a> para pegar o seu cookie!</p>
+        </h6>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>API 'Contador de palavras'</h2>
+            <p class="lead">Esta API recebe um JSON via GET com uma lista de URLs e uma palavra. E retorna um JSON com as URLs passada e o numero de repetições dessa palavra em cada site.</p>
+            <p class="lead">Essa API foi desenvolvida com o python 3.7 e para testar ou usar é precisso ter instalar:</p>
+            <ul>
+              <li>Flask==1.0.2</li>
+              <li>beautifulsoup4==4.6.3</li>
+              <li>requests==2.19.1</li>
+              <li>pytest==3.8.2</li>
+            </ul>
+            <p>Que pode ser obtido atravez dos comandos:</p>
+            <ul>
+              <li>pip install flask</li>
+              <li>pip install beautifulsoup4</li>
+              <li>pip install requests</li>
+              <li>pip install pytest</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Testando a API</h2>
+            <p class="lead">Basta rodar o arquivo app.py
+            <p>E com um terminal python:</p>
+            <ul>
+              <li></li>
+              <li>import requests</li>
+              <li></li>
+              <li>url = 'http://localhost:5000'</li>
+              <li></li>
+              <li>url_1 = "Coloque aqui a url do site"</li>
+              <li>url_2 = "Coloque aqui a url do outro site"</li>
+              <li>url_n = "Coloque aqui a url de quantos sites quiser"</li>
+              <li></li>
+              <li>palavra = "A palavra ou frase que sera pesquisada nos sites"</li>
+              <li></li>
+              <li># Rota de acesso a API</li>
+              <li></li>
+              <li>rota = '/crawler'</li>
+              <li></li>
+              <li># Faz a requisição para a API via GET</li>
+              <li>r = requests.get(url + rota, json={'urls' : [url_1, url_2, url_n], 'palavra' : palavra})</li>
+              <li></li>
+              <li># Com r.stato_code verifica se a respota da API foi 200, indicando tudo ok</li>
+              <li>r.status_code</li>
+              <li></li>
+              <li># Para ver o resultado:</li>
+              <li>r.text</li>
+              <li></li>
+              <li># Respota é dada como no exemplo a seguir</li>
+              <li># {</li>
+              <li>#  url_1 : numero de repetições (int)</li>
+              <li>#  url_2 : numero de repetições (int)</li>
+              <li>#  url_n : numero de repetições (int)</li>
+              <li>#  palavra : 'A palavra ou frase que foi pesquisada nos sites'</li>
+              <li># }</li>
+              <li># Um 'numero de repetições' negativo indica que não foi possivel acessar a url informada.</li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Contato</h2>
+            <p>Ficou maravilhado com o desenvolvimento dessa aplicação e quer entrar em contato com o desenvolvedor? </p>
+            <p>Achou uma ofensa o desenvolvimento dessa aplicação e quer ensinar o desenvolvedor? </p>
+            <p>Entre em contato :) <b>diegoffreitas7@gmail.com</b></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white"> 2018 </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+  </body>
+</html>
